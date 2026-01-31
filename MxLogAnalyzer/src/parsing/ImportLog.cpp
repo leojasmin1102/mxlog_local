@@ -7,17 +7,12 @@
 namespace fs = std::filesystem;
 using namespace std;
 
-// =======================
-// 构造函数
-// =======================
+
 ImportLog::ImportLog()
 {
     // 目前不需要初始化内容
 }
 
-// =======================
-// 析构函数
-// =======================
 ImportLog::~ImportLog()
 {
     // vector 会自动释放，不需要手动 delete

@@ -12,12 +12,14 @@ using namespace std;
 
 struct TimeStamp
 {
+    string strepochMs;
     int64_t epochMs;    //方便计算的毫秒时间戳
     string weekday;     //用于判断工作日的星期
 };
 
 struct UserId
 {
+    string strUserId;
     string ip;
     string mac;
 };
@@ -31,7 +33,6 @@ struct Product
 // 一条日志事件的最初拆分
 struct LogEvent
 {
-    //string content; //每一行的内容
     TimeStamp timestamp;   // 时间戳
     UserId userId;     // 用户唯一Id
     Product product;  //软件名称版本
@@ -40,9 +41,6 @@ struct LogEvent
     string operateResult;   //操作结果
 };
 
-// =======================
-// ImportLog 类
-// =======================
 class ImportLog
 {
 public:
@@ -71,4 +69,4 @@ private:
     vector<LogEvent> m_events;     // 解析后的日志事件
 };
 
-#endif // IMPORT_LOG_H
+#endif
