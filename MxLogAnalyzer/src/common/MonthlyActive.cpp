@@ -39,3 +39,29 @@ double MonthlyActiveCalculator::CalcMonthlyActiveRate(
 
     return rate;
 }
+
+bool MonthlyActiveCalculator::IsWorkday(int yyyymmdd) const
+{
+    return true;
+}
+
+bool MonthlyActiveCalculator::IsEffectiveOperation(
+    const LogEvnetAtomic& a) const
+{
+    if (a.isSolverEnd)
+        return true;
+
+    if (a.duration > 0)
+        return true;
+
+    return false;
+}
+
+int MonthlyActiveCalculator::GetMonthWorkdayCount(int yyyymm) const
+{
+    return 22;
+}
+
+
+
+

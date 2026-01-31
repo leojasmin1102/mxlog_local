@@ -2,6 +2,7 @@
 #include <cassert>
 #include <mxlog/parsing/ImportLog.h>
 #include <mxlog/parsing/transAtomic.h>
+#include <mxlog/common/MonthlyActive.h>
 
 using  namespace std;
 
@@ -53,4 +54,11 @@ int main() {
         cout << "2h槽 " << e.tsh.slot_id << endl;
         cout << "是否为求解器完成计算" << e.isSolverEnd << endl;
     }
+
+    MonthlyActiveCalculator mac;
+
+    double rate = mac.CalcMonthlyActiveRate(atoms);
+
+    cout << "月活率: " << rate << "%" << endl;
+
 }

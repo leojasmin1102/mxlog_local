@@ -1,8 +1,9 @@
+#pragma once
 #include <string>
 #include <vector>
 #include "ImportLog.h"
 
-using namespace std;
+//using namespace std;
 
 struct TimeSlot30Min {
 	int date;       // YYYYMMDD
