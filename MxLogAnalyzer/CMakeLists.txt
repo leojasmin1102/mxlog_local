@@ -12,4 +12,4 @@ file(GLOB_RECURSE SOURCES
     src/*.cpp
 )
 
-add_executable(MxLogAnalyzer ${SOURCES} "src/common/ImportLog.cpp" "include/mxlog/common/ImportLog.h")
+add_executable(MxLogAnalyzer ${SOURCES} "src/parsing/ImportLog.cpp" "include/mxlog/parsing/ImportLog.h")

@@ -7,22 +7,37 @@
 using namespace std;
 
 //  输出示例：
-//  [时间 星期] [用户ip 用户mac地址] [软件名称 软件版本] [日志级别] [操作类型] 操作结果
+//  [时间 星期][用户ip 用户mac地址][软件名称 软件版本][日志级别][操作类型]操作结果
 //  [2026 - 01 - 26 15:20 : 26 MO][192.168.8.196 50 - EB - F4 - B5 - 6F - F7][MxSim.Mechanical.GUI V2.0][INFO][SET_PROPERTY] SUCCESS
 
-// =======================
-// 一条日志事件（最简单版本）
-// =======================
-//struct LogEvent
-//{
-//
-//};
+struct TimeStamp
+{
+    int64_t epochMs;    //方便计算的毫秒时间戳
+    string weekday;     //用于判断工作日的星期
+};
 
+struct UserId
+{
+    string ip;
+    string mac;
+};
 
+struct Product 
+{
+    string productName;
+    string productVersion;
+};
+
+// 一条日志事件的最初拆分
 struct LogEvent
 {
-    string timestamp;   // 时间戳
-    string content;     // 原始内容
+    //string content; //每一行的内容
+    TimeStamp timestamp;   // 时间戳
+    UserId userId;     // 用户唯一Id
+    Product product;  //软件名称版本
+    string logLevel;    //日志级别
+    string operateType; //操作类型
+    string operateResult;   //操作结果
 };
 
 // =======================
@@ -49,10 +64,11 @@ private:
 
     // 解析一行日志
     LogEvent ParseLine(const string& line);
+    LogEvent ParseLineSpace(const string& line);
 
 private:
     vector<string> m_logFiles;   // 所有 log 文件路径
-    vector<LogEvent>    m_events;     // 解析后的日志事件
+    vector<LogEvent> m_events;     // 解析后的日志事件
 };
 
 #endif // IMPORT_LOG_H
