@@ -3,6 +3,7 @@
 #include <mxlog/parsing/ImportLog.h>
 #include <mxlog/parsing/transAtomic.h>
 #include <mxlog/common/MonthlyActive.h>
+#include <mxlog/common/UsageRate.h>
 
 using  namespace std;
 
@@ -60,5 +61,12 @@ int main() {
     double rate = mac.CalcMonthlyActiveRate(atoms);
 
     cout << "月活率: " << rate << "%" << endl;
+
+    UsageRate ur;
+
+    double rateB = ur.CalcUsageRate(atoms);
+
+    cout << "使用率: " << rateB * 100 << "%" << endl;
+
 
 }
