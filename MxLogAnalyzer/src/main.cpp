@@ -25,14 +25,16 @@ int main() {
         const auto& e = res[i];
 
         cout << "---- 事件 " << i << " ----" << endl;
-        cout << "时间戳 " << e.timestamp.weekday << endl;
-        cout << "用户唯一ID：" << e.userId.ip << endl;
-        cout << "产品名以及版本：" << e.product.productName << endl;
+        cout << "毫秒时间戳 " << e.timestamp.strepochMs << endl;
+        cout << "星期 " << e.timestamp.weekday << endl;
+        cout << "用户唯一ID：" << e.userId.strUserId << endl;
+        cout << "产品名：" << e.product.productName << endl;
+        cout << "产品版本：" << e.product.productVersion << endl;
         cout << "操作类型:" << e.operateType << endl;
 
         // 简单字段有效性检查
-        assert(!e.timestamp.weekday.empty());
+        assert(!e.timestamp.strepochMs.empty());
     }
 
-    cout << "\n基本解析看起来正常" << endl;
+    cout << "\n基本解析正常" << endl;
 }
