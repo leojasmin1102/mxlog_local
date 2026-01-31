@@ -61,7 +61,6 @@ private:
     void ParseLogFile(const string& filePath);
 
     // 解析一行日志
-    LogEvent ParseLine(const string& line);
     LogEvent ParseLineSpace(const string& line);
 
 private:

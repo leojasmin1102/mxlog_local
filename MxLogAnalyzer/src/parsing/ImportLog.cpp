@@ -1,12 +1,10 @@
 ﻿#include <mxlog/parsing/ImportLog.h>
-
 #include <filesystem>
 #include <fstream>
 #include <iostream>
 
 namespace fs = std::filesystem;
 using namespace std;
-
 
 ImportLog::ImportLog()
 {

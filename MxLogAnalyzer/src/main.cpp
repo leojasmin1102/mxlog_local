@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include <mxlog/parsing/ImportLog.h>
+#include <mxlog/parsing/transAtomic.h>
 
 using  namespace std;
 
@@ -19,7 +20,6 @@ int main() {
 
     cout << "读取到事件数: " << res.size() << "\n" << endl;
 
-    // 打印前5条检查解析是否正确
     for (size_t i = 0; i < std::min<size_t>(25, res.size()); ++i)
     {
         const auto& e = res[i];
@@ -37,4 +37,20 @@ int main() {
     }
 
     cout << "\n基本解析正常" << endl;
+
+    TransAtomic ta;
+    ta.Transform(res);
+
+    const auto& atoms = ta.GetAto();
+    cout << "原子事件数: " << atoms.size() << "\n" << endl;
+
+    for (size_t i = 0; i < std::min<size_t>(5, atoms.size()); ++i)
+    {
+        const auto& e = atoms[i];
+
+        cout << "---- 原子事件 " << i << " ----" << endl;
+        cout << "用户: " << e.userId << endl;
+        cout << "2h槽 " << e.tsh.slot_id << endl;
+        cout << "是否为求解器完成计算" << e.isSolverEnd << endl;
+    }
 }
