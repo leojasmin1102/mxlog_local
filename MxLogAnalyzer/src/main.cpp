@@ -4,6 +4,7 @@
 #include <mxlog/parsing/transAtomic.h>
 #include <mxlog/common/MonthlyActive.h>
 #include <mxlog/common/UsageRate.h>
+#include <mxlog/common/EffectiveUsage.h>
 
 using  namespace std;
 
@@ -68,5 +69,10 @@ int main() {
 
     cout << "使用率: " << rateB * 100 << "%" << endl;
 
+    EffectiveUsageCalculator euc;
+
+    double hours = euc.CalcEffectiveUsageHours(atoms);
+
+    cout << "有效使用时长: " << hours << " 小时" << endl;
 
 }
