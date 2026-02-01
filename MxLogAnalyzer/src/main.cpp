@@ -6,6 +6,8 @@
 #include <mxlog/common/UsageRate.h>
 #include <mxlog/common/EffectiveUsage.h>
 
+//#include <mxlog/crowTest/crow_all.h>
+
 using  namespace std;
 
 int main() {
@@ -74,5 +76,4 @@ int main() {
     double hours = euc.CalcEffectiveUsageHours(atoms);
 
     cout << "有效使用时长: " << hours << " 小时" << endl;
-
 }

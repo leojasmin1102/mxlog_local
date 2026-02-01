@@ -3,8 +3,7 @@
 MonthlyActiveCalculator::MonthlyActiveCalculator() {}
 MonthlyActiveCalculator::~MonthlyActiveCalculator() {}
 
-double MonthlyActiveCalculator::CalcMonthlyActiveRate(
-    const vector<LogEvnetAtomic>& atoms)
+double MonthlyActiveCalculator::CalcMonthlyActiveRate(const vector<LogEvnetAtomic>& atoms)
 {
     m_effectiveDays.clear();
 

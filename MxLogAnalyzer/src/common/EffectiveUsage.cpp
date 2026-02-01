@@ -3,8 +3,7 @@
 EffectiveUsageCalculator::EffectiveUsageCalculator() {}
 EffectiveUsageCalculator::~EffectiveUsageCalculator() {}
 
-double EffectiveUsageCalculator::CalcEffectiveUsageHours(
-    const vector<LogEvnetAtomic>& atoms)
+double EffectiveUsageCalculator::CalcEffectiveUsageHours(const vector<LogEvnetAtomic>& atoms)
 {
     m_validSlots.clear();
 
