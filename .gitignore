@@ -1,3 +1,5 @@
 /.vs
 /out
 /CMakeSettings.json
+/vcpkg.7z
+/vcpkg.7z.baiduyun.uploading.cfg
